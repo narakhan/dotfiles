@@ -1,0 +1,25 @@
+[init]
+  defaultBranch = develop
+
+[user]
+  email = {{@@ email @@}}
+  name = {{@@ name @@}}
+  signingkey = {{@@ public_key @@}}
+
+[diff]
+  tool = nvimdiff
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
+[pull]
+  rebase = false
+
+[commit]
+  gpgSign = true
+
+[tag]
+  gpgSign = true

@@ -1,0 +1,37 @@
+add_newline = false
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold red)"
+
+[directory]
+truncation_length = 6
+truncate_to_repo = false
+
+[hostname]
+ssh_only = false
+style = "bold dimmed green"
+
+[git_commit]
+tag_disabled = false
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+ahead = " ${count}"
+behind = " ${count}"
+conflicted = " "
+deleted = " "
+modified = " "
+staged = " "
+stashed = " "
+untracked = " "
+renamed = " "
+
+[jobs]
+symbol = " "
+
+[username]
+show_always = true
+format = "[$user]($style)@"
+style_user = "bold dimmed green"

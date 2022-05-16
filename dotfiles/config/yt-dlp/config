@@ -1,0 +1,5 @@
+-o ~/Downloads/youtube/%(title)s.%(ext)s
+
+-f bestvideo[height<=1440]+bestaudio/best[height<=1440]
+
+--merge-output-format mkv

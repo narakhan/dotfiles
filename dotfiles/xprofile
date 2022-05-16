@@ -1,0 +1,10 @@
+setxkbmap -option caps:ctrl_modifier
+xset r rate 250 30
+
+picom -b
+
+dunst &
+
+unclutter &
+
+systemctl --user start autostart.target

@@ -1,0 +1,10 @@
+configuration {
+  dpi: 1;
+  location: 0;
+  monitor: "-4";
+  show-icons: true;
+  xoffset: 0;
+  yoffset: 0;
+}
+
+@theme "solarized"

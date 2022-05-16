@@ -1,0 +1,11 @@
+[Unit]
+Description=EasyEffects pipewire tuning
+After=pipewire.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/easyeffects --gapplication-service
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
