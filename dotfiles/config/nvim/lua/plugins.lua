@@ -20,6 +20,8 @@ return require('packer').startup(function()
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
       'RRethy/nvim-treesitter-textsubjects',
+      'RRethy/nvim-treesitter-endwise',
+      'p00f/nvim-ts-rainbow',
     },
     run = ':TSUpdate',
   }

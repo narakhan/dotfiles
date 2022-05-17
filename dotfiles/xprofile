@@ -5,6 +5,8 @@ picom -b
 
 dunst &
 
-unclutter &
+{%@@ if profile == 'apep' @@%}
+xss-lock -- i3lock -n -c 000000 &
+{%@@ endif @@%}
 
-systemctl --user start autostart.target
+unclutter &

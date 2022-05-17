@@ -30,6 +30,7 @@ dotfiles:
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
+    chmod: '700'
   f_config:
     src: config/ncdu/config
     dst: ~/.config/ncdu/config
@@ -55,11 +56,13 @@ dotfiles:
     src: config/zsh
     dst: ~/.config/zsh
     upignore:
-    - '.*'
+    - .*
     - '!.zshrc'
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+    upignore:
+    - plugin/packer_compiled.lua
   f_mimeapps.list:
     src: config/mimeapps.list
     dst: ~/.config/mimeapps.list
@@ -74,3 +77,10 @@ profiles:
   knucker:
     dotfiles:
     - ALL
+  apep:
+    dotfiles:
+    - ALL
+    variables:
+      email: nicholas.mobbs@penten.com
+      name: Nicholas Mobbs
+      public_key: E43087589C9F3693

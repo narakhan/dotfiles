@@ -20,7 +20,7 @@ return {
       font = wezterm.font("FiraCode Nerd Font", {retina=true})
     },
   },
-  font_size = 15,
+  font_size = 12,
   window_decorations = "NONE",
   window_padding = {
     left = 0,

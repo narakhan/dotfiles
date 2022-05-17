@@ -1,8 +1,31 @@
-local ts_configs = require 'nvim-treesitter.configs'
-ts_configs.setup {
+-- local ts_configs = require 'nvim-treesitter.configs'
+-- ts_configs.setup {
+--   highlight = { enable = true, use_languagetree = true },
+--   indent = { enable = false },
+--   refactor = {
+--     smart_rename = { enable = true, keymaps = { smart_rename = 'grr' } },
+--     highlight_definitions = { enable = true },
+--     -- highlight_current_scope = { enable = true }
+--   },
+--   textsubjects = {
+--     enable = true,
+--     keymaps = {
+--       ['.'] = 'textsubjects-smart',
+--       [';'] = 'textsubjects-container-outer',
+--     },
+--   },
+--   endwise = { enable = true },
+-- }
+
+local treesitter = require('nvim-treesitter.configs')
+
+treesitter.setup {
+  -- Prefer to have all parsers on hand
   ensure_installed = 'all',
-  highlight = { enable = true, use_languagetree = true },
-  indent = { enable = false },
+  highlight = {
+    enable = true,
+  },
+  -- These are the defaults am including for visibility
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -12,17 +35,4 @@ ts_configs.setup {
       node_decremental = 'grm',
     },
   },
-  refactor = {
-    smart_rename = { enable = true, keymaps = { smart_rename = 'grr' } },
-    highlight_definitions = { enable = true },
-    -- highlight_current_scope = { enable = true }
-  },
-  textsubjects = {
-    enable = true,
-    keymaps = {
-      ['.'] = 'textsubjects-smart',
-      [';'] = 'textsubjects-container-outer',
-    },
-  },
-  endwise = { enable = true },
 }

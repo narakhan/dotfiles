@@ -50,8 +50,8 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
     # Minimise window
     # Key([mod], "m", lazy.window.toggle_minimize()),
-    Key([mod, "shift"], "m", lazy.spawn("Qminimize -u"), desc="Minimize window"),
-    Key([mod], "m", lazy.spawn("Qminimize -m"), desc="Un-minimize window"),
+    Key([mod, "shift"], "m", lazy.spawn("Qminimize -u")),
+    Key([mod], "m", lazy.spawn("Qminimize -m")),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key(
@@ -71,9 +71,9 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
     # Change focus
-    Key([mod], "a", lazy.to_screen(1)),
-    Key([mod], "s", lazy.to_screen(2)),
-    Key([mod], "d", lazy.to_screen(0)),
+    Key([mod], "a", lazy.to_screen(0)),
+    Key([mod], "s", lazy.to_screen(1)),
+    Key([mod], "d", lazy.to_screen(2)),
     # Toggle Float
     Key([mod], "t", lazy.window.toggle_floating()),
     # Reset window sizes
@@ -212,7 +212,6 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 
-
 @hook.subscribe.startup_once
 def startup_once():
     run(
@@ -220,7 +219,6 @@ def startup_once():
         shell=True,
         check=True,
     )
-
 
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
