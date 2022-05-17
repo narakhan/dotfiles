@@ -69,14 +69,21 @@ dotfiles:
   f_config.py:
     src: config/qtile/config.py
     dst: ~/.config/qtile/config.py
-variables:
-  email: narakhan@disroot.org
-  name: narakhan
-  public_key: 8F901B0B0B5526AC
 profiles:
   knucker:
     dotfiles:
     - ALL
+    variables:
+      email: narakhan@disroot.org
+      name: narakhan
+      public_key: 8F901B0B0B5526AC
+  taniwha:
+    dotfiles:
+    - ALL
+    variables:
+      email: narakhan@disroot.org
+      name: narakhan
+      public_key: 57838D16EADB8191
   apep:
     dotfiles:
     - ALL

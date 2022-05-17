@@ -71,9 +71,9 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
     # Change focus
-    Key([mod], "a", lazy.to_screen(0)),
-    Key([mod], "s", lazy.to_screen(1)),
-    Key([mod], "d", lazy.to_screen(2)),
+    Key([mod], "a", lazy.to_screen(1)),
+    Key([mod], "s", lazy.to_screen(2)),
+    Key([mod], "d", lazy.to_screen(0)),
     # Toggle Float
     Key([mod], "t", lazy.window.toggle_floating()),
     # Reset window sizes
