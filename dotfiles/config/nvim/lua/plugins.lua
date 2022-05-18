@@ -5,14 +5,6 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   ------------------
-  -- Display
-  ------------------
-  use {
-    'sainnhe/sonokai',
-    'lukas-reineke/indent-blankline.nvim',
-  }
-
-  ------------------
   -- Treesitter
   ------------------
   use {
@@ -22,9 +14,23 @@ return require('packer').startup(function()
       'RRethy/nvim-treesitter-textsubjects',
       'RRethy/nvim-treesitter-endwise',
       'p00f/nvim-ts-rainbow',
+      'lewis6991/spellsitter.nvim',
+      'windwp/nvim-ts-autotag'
     },
     run = ':TSUpdate',
   }
+
+  ------------------
+  -- Display
+  ------------------
+  use {
+    {
+      'sainnhe/sonokai',
+      requires = { 'nvim-treesitter' },
+    },
+    'lukas-reineke/indent-blankline.nvim',
+  }
+
 
   ------------------
   -- Telescope
@@ -57,5 +63,42 @@ return require('packer').startup(function()
     config = function()
       require('Comment').setup()
     end
+  }
+
+
+  ------------------
+  -- Git
+  ------------------
+  use {
+    {
+      'tpope/vim-fugitive',
+      cmd = 'Git',
+    },
+    {
+      'TimUntersberger/neogit',
+      cmd = 'Neogit',
+      config = function()
+        require('neogit').setup()
+      end
+    },
+    {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('gitsigns').setup()
+      end
+    },
+  }
+
+  ------------------
+  -- LSP
+  ------------------
+  use {
+    'neovim/nvim-lspconfig',
+    {
+      'jose-elias-alvarez/null-ls.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+      },
+    },
   }
 end)

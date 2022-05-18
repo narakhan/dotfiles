@@ -1,23 +1,5 @@
--- local ts_configs = require 'nvim-treesitter.configs'
--- ts_configs.setup {
---   highlight = { enable = true, use_languagetree = true },
---   indent = { enable = false },
---   refactor = {
---     smart_rename = { enable = true, keymaps = { smart_rename = 'grr' } },
---     highlight_definitions = { enable = true },
---     -- highlight_current_scope = { enable = true }
---   },
---   textsubjects = {
---     enable = true,
---     keymaps = {
---       ['.'] = 'textsubjects-smart',
---       [';'] = 'textsubjects-container-outer',
---     },
---   },
---   endwise = { enable = true },
--- }
-
 local treesitter = require('nvim-treesitter.configs')
+local spellsitter = require('spellsitter')
 
 treesitter.setup {
   -- Prefer to have all parsers on hand
@@ -35,4 +17,42 @@ treesitter.setup {
       node_decremental = 'grm',
     },
   },
+  -- Auto-close tags
+  autotag = {
+    enable = true,
+  },
+  -- Adds `end` in Lua/Ruby/etc
+  endwise = {
+    enable = true,
+  },
+  -- Smart text object selection
+  textsubjects = {
+    enable = true,
+    keymaps = {
+      ['.'] = 'textsubjects-smart',
+      [';'] = 'textsubjects-container-outer',
+      ['i;'] = 'textsubjects-container-inner',
+    },
+  },
+  -- Rainbow parens
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  },
+  -- Refactor tools
+  refactor = {
+    highlight_definitions = { enable = true },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = 'grr',
+      },
+    },
+  },
+}
+
+-- Prevent spell-check from including code
+spellsitter.setup {
+  enable = true
 }

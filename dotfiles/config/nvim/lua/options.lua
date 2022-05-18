@@ -4,6 +4,9 @@ o.updatetime = 500
 o.undofile = true
 o.confirm = true
 o.hidden = true
+
+--- Spelling
+o.spell = true
 o.spelllang = "en_au"
 
 --- Search

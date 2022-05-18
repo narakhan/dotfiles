@@ -63,6 +63,7 @@ dotfiles:
     dst: ~/.config/nvim
     upignore:
     - plugin/packer_compiled.lua
+    - spell
   f_mimeapps.list:
     src: config/mimeapps.list
     dst: ~/.config/mimeapps.list
