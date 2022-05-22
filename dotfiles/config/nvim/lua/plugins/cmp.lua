@@ -1,9 +1,9 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 local function check_backspace()
-  local col = vim.fn.col '.' - 1
-  return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' ~= nil
+  local col = vim.fn.col('.') - 1
+  return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
 local feedkeys = vim.fn.feedkeys
@@ -24,7 +24,7 @@ local snippet_prev_keys = replace_termcodes(
 
 cmp.setup({
   completion = {
-    completeopt = "menuone,noinsert",
+    completeopt = 'menuone,noinsert',
   },
   snippet = {
     expand = function(args)
@@ -36,14 +36,14 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<C-y>'] = cmp.config.disable,
-    ['<C-e>'] = cmp.mapping {
+    ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    },
-    ['<cr>'] = cmp.mapping.confirm {
+    }),
+    ['<cr>'] = cmp.mapping.confirm({
       select = true,
-      behavior = cmp.ConfirmBehavior.Replace
-    },
+      behavior = cmp.ConfirmBehavior.Replace,
+    }),
     ['<tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -68,11 +68,9 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp' },
-    { name = "luasnip" },
+    { name = 'luasnip' },
     { name = 'nvim_lua' },
-    { name = "path" },
-    { name = "buffer" },
+    { name = 'path' },
+    { name = 'buffer' },
   },
 })
-
-

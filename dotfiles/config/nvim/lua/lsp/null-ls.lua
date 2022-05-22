@@ -10,8 +10,6 @@ local sources = {
   b.formatting.rustfmt,
   b.formatting.shfmt,
   b.formatting.stylua,
-  b.formatting.trim_newlines,
-  b.formatting.trim_whitespace,
 
   -- Diagnostics
   b.diagnostics.eslint,
@@ -26,11 +24,10 @@ local sources = {
 }
 
 return {
-  setup = (function(on_attach)
+  setup = function(on_attach)
     null_ls.setup({
-        -- debug = true,
-        sources = sources,
-        on_attach = on_attach,
+      sources = sources,
+      on_attach = on_attach,
     })
-  end)
+  end,
 }

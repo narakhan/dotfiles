@@ -3,11 +3,11 @@ local map = vim.api.nvim_set_keymap
 local noremap = { noremap = true }
 
 -- Make backspace more consistent
-o.backspace = "indent,eol,start"
+o.backspace = 'indent,eol,start'
 
 -- Leader key
-g.mapleader = " "
-g.maplocalleader = " "
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 -- Disable <F1> help
 map('', '<f1>', '<nop>', noremap)
@@ -24,7 +24,6 @@ map('n', '<C-h>', '<C-w>h', noremap)
 map('n', '<C-j>', '<C-w>j', noremap)
 map('n', '<C-k>', '<C-w>k', noremap)
 map('n', '<C-l>', '<C-w>l', noremap)
-
 
 -- Make <ESC> exit terminal mode, and make <C-v> insert an <ESC>
 map('t', '<ESC>', '<C-\\><C-n>', noremap)

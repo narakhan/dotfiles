@@ -2,22 +2,22 @@ local map = vim.api.nvim_set_keymap
 local noremap = { noremap = true }
 --local silent_noremap = { silent = true, noremap = true }
 
-local telescope = require 'telescope'
-local actions = require 'telescope.actions'
+local telescope = require('telescope')
+local actions = require('telescope.actions')
 
-telescope.setup {
+telescope.setup({
   defaults = {
     layout_strategy = 'flex',
     scroll_strategy = 'cycle',
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
+        ['<esc>'] = actions.close,
       },
     },
   },
   extensions = {
     ['ui-select'] = {
-      require("telescope.themes").get_dropdown {},
+      require('telescope.themes').get_dropdown({}),
     },
   },
   pickers = {
@@ -25,22 +25,23 @@ telescope.setup {
     lsp_code_actions = { theme = 'dropdown' },
     lsp_definitions = { theme = 'dropdown' },
     lsp_implementations = { theme = 'dropdown' },
+    live_grep = { theme = 'dropdown' },
     buffers = {
       ignore_current_buffer = true,
       sort_mru = true,
-      previewer = false,
+      theme = 'dropdown',
     },
     find_files = {
-      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+      find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' },
+      theme = 'dropdown',
     },
   },
-}
+})
 
-telescope.load_extension("fzf")
-telescope.load_extension("frecency")
-telescope.load_extension("ui-select")
+telescope.load_extension('fzf')
+telescope.load_extension('ui-select')
 
 -- Navigate buffers and repos
-map('n', ';b', [[<cmd>Telescope buffers show_all_buffers=true theme=get_dropdown<cr>]], noremap)
-map('n', ';f', [[<cmd>Telescope find_files theme=get_dropdown<cr>]], noremap)
-map('n', ';g', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], noremap)
+vim.keymap.set('n', ';b', require('telescope.builtin').buffers, noremap)
+vim.keymap.set('n', ';f', require('telescope.builtin').find_files, noremap)
+vim.keymap.set('n', ';g', require('telescope.builtin').live_grep, noremap)

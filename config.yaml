@@ -58,18 +58,21 @@ dotfiles:
     upignore:
     - .*
     - '!.zshrc'
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
-    upignore:
-    - plugin/packer_compiled.lua
-    - spell
   f_mimeapps.list:
     src: config/mimeapps.list
     dst: ~/.config/mimeapps.list
   f_config.py:
     src: config/qtile/config.py
     dst: ~/.config/qtile/config.py
+  d_stylua:
+    src: config/stylua
+    dst: ~/.config/stylua
+  f_init.lua:
+    src: config/nvim/init.lua
+    dst: ~/.config/nvim/init.lua
+  d_lua:
+    src: config/nvim/lua
+    dst: ~/.config/nvim/lua
 profiles:
   knucker:
     dotfiles:

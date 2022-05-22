@@ -1,11 +1,9 @@
--- Opt in performance improvements
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
+local utils = require('utils')
 
-require('bindings')
-require('options')
+if utils.file_exists(vim.fn.stdpath('data') .. '/site/pack/packer/start/impatient.nvim') then
+  require('impatient')
+end
 
--- New
-
+require('config')
 require('plugins')
 require('lsp')

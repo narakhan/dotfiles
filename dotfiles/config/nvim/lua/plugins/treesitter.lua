@@ -1,7 +1,7 @@
 local treesitter = require('nvim-treesitter.configs')
 local spellsitter = require('spellsitter')
 
-treesitter.setup {
+treesitter.setup({
   -- Prefer to have all parsers on hand
   ensure_installed = 'all',
   highlight = {
@@ -50,9 +50,9 @@ treesitter.setup {
       },
     },
   },
-}
+})
 
 -- Prevent spell-check from including code
-spellsitter.setup {
-  enable = true
-}
+spellsitter.setup({
+  enable = true,
+})
