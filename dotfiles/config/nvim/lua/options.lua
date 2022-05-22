@@ -38,7 +38,7 @@ g.loaded_perl_provider = 0
 o.lazyredraw = true
 o.number = true
 o.numberwidth = 3
-o.signcolumn = 'yes:1'
+-- o.signcolumn = 'yes:1'
 
 --- Non-printable characters
 o.list = true

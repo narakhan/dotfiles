@@ -1,4 +1,7 @@
-return require('packer').startup(function()
+local packer = require("packer")
+local use = packer.use
+
+return packer.startup(function()
   ------------------
   -- Packer
   ------------------
@@ -98,7 +101,25 @@ return require('packer').startup(function()
       'jose-elias-alvarez/null-ls.nvim',
       requires = {
         'nvim-lua/plenary.nvim',
+        'RRethy/vim-illuminate',
       },
+    },
+  }
+  ------------------
+  -- Completion
+  ------------------
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+        "L3MON4D3/LuaSnip",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lsp-document-symbol",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-path",
+        "lukas-reineke/cmp-under-comparator",
+        "saadparwaiz1/cmp_luasnip",
     },
   }
 end)
